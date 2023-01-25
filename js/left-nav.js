@@ -10,7 +10,7 @@ const leftNavItems = [
     {
         id: 2,
         name: `Executive Dashboards`,
-        icon:'home',
+        icon:'briefcase',
         items: [
             {
                 name:'CEO Weekly Update',
@@ -36,7 +36,7 @@ const leftNavItems = [
     {
         id: 3,
         name: `Sales Reporting`,
-        icon:'home',
+        icon:'chart-column',
         items: [
             {
                 name:'CEO Weekly Update',
@@ -62,7 +62,7 @@ const leftNavItems = [
     {
         id: 4,
         name: `Financial KPIs`,
-        icon:'home',
+        icon:'percent',
         items: [
             {
                 name:'CEO Weekly Update',
@@ -88,7 +88,7 @@ const leftNavItems = [
     {
         id: 5,
         name: `Marketing`,
-        icon:'home',
+        icon:'chart-line',
         items: [
             {
                 name:'CEO Weekly Update',
@@ -140,7 +140,7 @@ const leftNavItems = [
     {
         id: 7,
         name: `Videos`,
-        icon:'home',
+        icon:'circle-play',
         items: [
             {
                 name:'CEO Weekly Update',

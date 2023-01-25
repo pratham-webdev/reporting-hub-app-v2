@@ -225,3 +225,18 @@ footer {
   right: 0;
   left: auto !important;
 }
+
+#quick-links-panel{
+  position: fixed;
+  top: 65px;
+  right: 10px;
+  background-color: var(--background);
+  border-radius: 12px;
+  border: 1px solid var(--stroke-color);
+  box-shadow: 4px 4px 8px 0 rgba(var(--main-text-black-rgb), 0.1);
+}
+
+.quick-links-sub-panel{
+  height: 88vh;
+  width: 18vw;
+}

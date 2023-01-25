@@ -13,20 +13,20 @@ const topNavItems = [
         options: [
             {
             id: 1,
-            icon: "bookmark-fill",
+            icon: "star",
             name: "Bookmarks"
         },
         {
             id: 2,
-            icon: "hourglass-split",
+            icon: "share-nodes",
             name: "Share"
         }, {
             id: 3,
-            icon: "folder-fill",
+            icon: "file-export",
             name: "Export"
         }, {
             id: 4,
-            icon: "tools",
+            icon: "up-right-and-down-left-from-center",
             name: "Fullscreen"
         },
     ],
@@ -36,6 +36,7 @@ const topNavItems = [
         icon: "table-columns",
         name: "Quick Links",
         title: 'Quick Links',
+        href:'#quick-links-panel',
     },
     {
         id: 'top-nav-4',
@@ -45,33 +46,33 @@ const topNavItems = [
         options: [
             {
             id: 1,
-            icon: "bookmark-fill",
+            icon: "gear",
             name: "Oranization Setup"
         },
         {
             id: 2,
-            icon: "hourglass-split",
+            icon: "toggle-on",
             name: "Capacity Settings"
         }, {
             id: 3,
-            icon: "folder-fill",
+            icon: "swatchbook",
             name: "Edit Theme"
         }, {
             id: 4,
-            icon: "tools",
+            icon: "users",
             name: "Manage Groups"
         }, {
             id: 5,
-            icon: "question-lg",
+            icon: "diagram-project",
             name: "Manage Navigation"
         }, {
             id: 6,
-            icon: "wrench-adjustable-circle",
+            icon: "chart-pie",
             name: "Site Usage"
         },
         {
             id: 7,
-            icon: "person-fill",
+            icon: "arrow-right-from-bracket",
             name: "Logout"
         },]
     },
@@ -101,7 +102,7 @@ function createTopNavLinks(el) {
     </div>
     `}
     else{
-        return `<a href="#" class="nav-link d-inline-flex align-items-center p-2 me-3" title="${el.title}">
+        return `<a href="${el.href ? el.href : ''}" class="nav-link d-inline-flex align-items-center p-2 me-3" title="${el.title}" ${el.href ? `data-bs-toggle="collapse"` : ''}>
         <i class="fa-solid fa-${el.icon} ${el.name ? 'me-2' : ''} ${el.icon === 'circle-user' ? 'fs-4' : ''}"></i>
         ${el.name ? el.name : ''}
         </a>
@@ -117,7 +118,7 @@ function createDropDownOptions(options,id) {
     return `<ul class="dropdown-menu p-2" id="${id}">
         ${options.map((el)=>{
             return `<a href="#" class="nav-link  p-2">
-            <i class="bi bi-${el.icon} me-2"></i>
+            <i class="fa-solid fa-${el.icon} me-2"></i>
             ${el.name}
             </a>`
         }).join("")}

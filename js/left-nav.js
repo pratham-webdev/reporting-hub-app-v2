@@ -11,7 +11,24 @@ const leftNavItems = [
         id: 2,
         name: `Executive Dashboards`,
         icon:'home',
-        items: ["CEO Weekly Update", "Municipal Bi-Weekly Status Report", "Quarterly Reports", "Monthly Reports",],
+        items: [
+            {
+                name:'CEO Weekly Update',
+                class:'active'
+            },
+            {
+                name:'Municipal Bi-Weekly Status Report',
+                class:''
+            },
+            {
+                name:'Quarterly Reports',
+                class:''
+            },
+            {
+                name:'Monthly Reports',
+                class:''
+            }
+        ],
         parentClass: "active",
         childClass: "show",
         aria: "true"
@@ -20,7 +37,24 @@ const leftNavItems = [
         id: 3,
         name: `Sales Reporting`,
         icon:'home',
-        items: ["CEO Weekly Update", "Municipal Bi-Weekly Status Report", "Quarterly Reports", "Monthly Reports",],
+        items: [
+            {
+                name:'CEO Weekly Update',
+                class:''
+            },
+            {
+                name:'Municipal Bi-Weekly Status Report',
+                class:''
+            },
+            {
+                name:'Quarterly Reports',
+                class:''
+            },
+            {
+                name:'Monthly Reports',
+                class:''
+            }
+        ],
         parentClass: "",
         childClass: "",
         aria: "false"
@@ -29,7 +63,24 @@ const leftNavItems = [
         id: 4,
         name: `Financial KPIs`,
         icon:'home',
-        items: ["CEO Weekly Update", "Municipal Bi-Weekly Status Report", "Quarterly Reports", "Monthly Reports",],
+        items: [
+            {
+                name:'CEO Weekly Update',
+                class:''
+            },
+            {
+                name:'Municipal Bi-Weekly Status Report',
+                class:''
+            },
+            {
+                name:'Quarterly Reports',
+                class:''
+            },
+            {
+                name:'Monthly Reports',
+                class:''
+            }
+        ],
         parentClass: "",
         childClass: "",
         aria: "false"
@@ -38,7 +89,24 @@ const leftNavItems = [
         id: 5,
         name: `Marketing`,
         icon:'home',
-        items: ["CEO Weekly Update", "Municipal Bi-Weekly Status Report", "Quarterly Reports", "Monthly Reports",],
+        items: [
+            {
+                name:'CEO Weekly Update',
+                class:''
+            },
+            {
+                name:'Municipal Bi-Weekly Status Report',
+                class:''
+            },
+            {
+                name:'Quarterly Reports',
+                class:''
+            },
+            {
+                name:'Monthly Reports',
+                class:''
+            }
+        ],
         parentClass: "",
         childClass: "",
         aria: "false"
@@ -47,7 +115,24 @@ const leftNavItems = [
         id: 6,
         name: `Row Level Security`,
         icon:'home',
-        items: ["CEO Weekly Update", "Municipal Bi-Weekly Status Report", "Quarterly Reports", "Monthly Reports",],
+        items: [
+            {
+                name:'CEO Weekly Update',
+                class:'active'
+            },
+            {
+                name:'Municipal Bi-Weekly Status Report',
+                class:''
+            },
+            {
+                name:'Quarterly Reports',
+                class:''
+            },
+            {
+                name:'Monthly Reports',
+                class:''
+            }
+        ],
         parentClass: "",
         childClass: "",
         aria: "false"
@@ -56,7 +141,24 @@ const leftNavItems = [
         id: 7,
         name: `Videos`,
         icon:'home',
-        items: ["CEO Weekly Update", "Municipal Bi-Weekly Status Report", "Quarterly Reports", "Monthly Reports",],
+        items: [
+            {
+                name:'CEO Weekly Update',
+                class:''
+            },
+            {
+                name:'Municipal Bi-Weekly Status Report',
+                class:''
+            },
+            {
+                name:'Quarterly Reports',
+                class:''
+            },
+            {
+                name:'Monthly Reports',
+                class:''
+            }
+        ],
         parentClass: "",
         childClass: "",
         aria: "false"
@@ -68,8 +170,7 @@ function createNavLeftNavSection(el) {
     return `
     <nav class="bd-links pt-1 pb-2 px-lg-3 px-md-2 px-sm-2 px-2">
     <div class="mb-2">
-    <button class="btn d-flex align-items-center rounded w-100 ${el.parentClass} ${el.aria ? 'drop' : ''}" data-bs-toggle="collapse" data-bs-target="#leftNav-${el.id}"
-      aria-expanded=${el.aria} title="${el.name}">
+    <button class="btn d-flex align-items-center rounded w-100 ${el.parentClass} ${el.aria ? 'drop' : ''}" data-bs-toggle="collapse" data-bs-target="#leftNav-${el.id}" aria-expanded=${el.aria} title="${el.name}">
       <i class="fa-solid fa-${el.icon} me-2"></i>
       <span>${el.name}</span>
       </button>
@@ -82,7 +183,7 @@ function createNavLeftNavSection(el) {
 
 function createNavLinks(items) {
     return items.map((item)=>{
-        return `<a href="" class="d-block fw-normal pb-1 rounded">${item}</a>`;
+        return `<a href="" class="d-block mt-3 rounded ${item.class}" title="${item.name}">${item.name}</a>`;
     }).join("");
 }
 

@@ -93,7 +93,7 @@ function createTopNavLinks(el) {
    if(el.options){
     return `
     <div class="position-relative">
-    <a href="#${el.id}" class="nav-link d-inline-flex align-items-center p-2 me-3" title="${el.title}" data-bs-toggle="collapse" role="button" aria-expanded="false">
+    <a href="#${el.id}" class="nav-link d-inline-flex align-items-center p-2 me-3" title="${el.title}" data-bs-toggle="dropdown" role="button">
     <i class="fa-solid fa-${el.icon} ${el.name ? 'me-2' : ''} ${el.icon === 'circle-user' ? 'fs-4' : ''}"></i>
     ${el.name ? el.name : ''}
     </a>
@@ -114,9 +114,9 @@ function createTopNavLinksArray() {
 }
 
 function createDropDownOptions(options,id) {
-    return `<ul class="dropdown-menu" id="${id}">
+    return `<ul class="dropdown-menu p-2" id="${id}">
         ${options.map((el)=>{
-            return `<a href="#" class="nav-link  p-2 me-2">
+            return `<a href="#" class="nav-link  p-2">
             <i class="bi bi-${el.icon} me-2"></i>
             ${el.name}
             </a>`

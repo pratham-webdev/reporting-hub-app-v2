@@ -249,3 +249,12 @@ footer {
   background-color: var(--background);
   height: 100%;
 }
+
+.card{
+  border-color: var(--stroke-color);
+}
+
+.card:hover{
+  border-color: var(--primary-blue);
+  box-shadow: 4px 4px 16px rgba(var(--primary-blue-rgb), 0.1);
+}

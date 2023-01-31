@@ -166,7 +166,6 @@ const leftNavItems = [
 ]
 
 function createNavLeftNavSection(el) {
-    console.log(el.items);
     return `
     <nav class="bd-links pt-1 pb-2 px-lg-3 px-md-2 px-sm-2 px-2">
     <div class="mb-2">

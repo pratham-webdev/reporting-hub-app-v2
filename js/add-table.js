@@ -36,17 +36,21 @@ const tableRowsArray = [
     },
 ]
 
+let bold=true;
+
 function addTable(){
     return `<div class="mx-2 mb-3 row row-cols-md-5 g-3">
-    ${tableRowsArray.map(createTableRows).join("")}
+    ${tableRowsArray.slice(0,1).map((el) =>{
+        return createTableRows(el,bold);
+    }).join("")}
+    ${tableRowsArray.slice(1,tableRowsArray.length).map(createTableRows).join("")}
   </div>`
 }
 
-function createTableRows(el){
+function createTableRows(el,bold){
     let tempArray = [];
-    console.log(el);
     for (let value in el){
-        tempArray.push(` <div class="col pb-2 border-bottom small">${el[value]}</div>`);
+        tempArray.push(` <div class="col pb-2 border-bottom small ${bold === true ? 'fw-bold' : ''}">${el[value]}</div>`);
     }
     return tempArray.join("");
 }
